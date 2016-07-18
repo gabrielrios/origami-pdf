@@ -460,7 +460,7 @@ module Origami
     def signature_page(options={})
 
       # Define the attributes of a box where we will put our annotation + mox logo + description
-      box = { x: 175, y:490, width: 500, height: 125 }
+      box = { :x => 175, :y => 490, :width => 500, :height => 125 }
 
       # Create a new page and contentsream to hold the text/image content to be put the page
       page     = Origami::Page.new
@@ -468,10 +468,10 @@ module Origami
 
       # Load stamp and add reference to the page
       stamp_options = {
-        x: box[:x] + 10,
-        y: box[:y] + 10,
-        width: 100,
-        height: 100
+        :x => box[:x] + 10,
+        :y => box[:y] + 10,
+        :width => 100,
+        :height => 100
       }
       stamp = Origami::Graphics::ImageXObject.from_image_file("#{File.dirname(__FILE__)}/../../data/stamp.jpg")
       stamp.Width  = stamp_options[:width]
