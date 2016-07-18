@@ -256,6 +256,7 @@ module Origami
       # No more modification are allowed after signing.
       #
       self.freeze
+      return Base64.encode64(Digest::SHA1.digest(signable_data))
     end
 
     #
